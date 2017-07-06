@@ -4,7 +4,8 @@
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [compojure "1.5.1"]
-                 [ring/ring-defaults "0.2.1"]]
+                 [ring/ring-defaults "0.2.1"]
+                 [org.postresql/postresql "9.5-173-jdbc41"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler clojure-webapp.handler/app}
   :profiles
