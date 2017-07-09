@@ -1,17 +1,14 @@
 # clojure-webapp
 
-Learning clojure and web monitoring
+A Clojure library designed to ... well, that part is up to you.
 
-Built with Leiningen and Compojure
+## Usage
 
-## Prerequisites
+FIXME
 
-You will need [Leiningen][] 2.0.0 or above installed.
+## License
 
-[leiningen]: https://github.com/technomancy/leiningen
+Copyright © 2017 FIXME
 
-## Running
-
-To start a web server for the application, run:
-
-    lein ring server
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
