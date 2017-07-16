@@ -1,10 +1,10 @@
 # clojure-webapp
 
-A Clojure library designed to ... well, that part is up to you.
+Simple clojure webapp to keep tallies of stuff that needs tallying
 
 ## Usage
 
-FIXME
+To keep tracks of numbers larger than available fingers
 
 ## License
 
