@@ -4,7 +4,7 @@
 				[hiccup.page :as page]
 				[compojure.route :as route]
 				[ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-				[clojure-webapp.controllers.traffic-handler :as traffic-handler]
+				[clojure-webapp.controllers.tallies :as tallies]
 				[clojure-webapp.view.layout :as layout]
 				[clojure-webapp.models.migration :as schema])
 	(:gen-class))

@@ -5,26 +5,32 @@
 				[clojure-webapp.views.tallies :as view]
 				[clojure-webapp.models.tallies :as model]))
 
-(defn index []
-	(view/index (model/all)))
-
-(defn create
+(defn new-tally-group []
 	)
 
-(defn add-tally
+(defn get-list-of-tally-groups []
 	)
 
-(defn rename-tally
+(defn load-tally-group [group-id]
 	)
 
-(defn increment
+(defn add-tally [group-id]
 	)
 
-(defn decrement
+(defn remove-tally [tally-id]
 	)
 
-(defn reset-tally
+(defn rename-tally [tally-id new-name]
 	)
 
-(defn reset-all
+(defn increment-tally [tally-id]
+	)
+
+(defn decrement-tally [tally-id]
+	)
+
+(defn reset-tally [tally-id]
+	)
+
+(defn reset-all-in-group [group-id]
 	)

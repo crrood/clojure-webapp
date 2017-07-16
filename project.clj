@@ -9,4 +9,5 @@
   				[ring/ring-jetty-adapter "1.4.0"]
   				[compojure "1.4.0"]
   				[ring/ring-defaults "0.3.0"]
-  				[hiccup "1.0.5"]])
+  				[hiccup "1.0.5"]
+  				[reagent "0.7.0"]])
