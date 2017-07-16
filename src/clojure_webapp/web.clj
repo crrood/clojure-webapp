@@ -1,7 +1,13 @@
 (ns clojure-webapp.web
-	(:require [compojure.core :refer [defroutes GET]]
-	[ring.adapter.jetty :as ring]
-	[hiccup.page :as page]))
+	(:require 	[compojure.core :refer [defroutes GET]]
+				[ring.adapter.jetty :as ring]
+				[hiccup.page :as page]
+				[compojure.route :as route]
+				[ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+				[clojure-webapp.controllers.traffic-handler :as traffic-handler]
+				[clojure-webapp.view.layout :as layout]
+				[clojure-webapp.models.migration :as schema])
+	(:gen-class))
 
 (defn index []
 	(page/html5
@@ -11,9 +17,16 @@
 			[:div {:id "content"} "Hello World!"]]))
 
 (defroutes routes
-	(GET "/" [] (index)))
+	tallies/routes
+	(route/resources "/")
+	(route/not-found (layout/four-oh-four)))
 
-(defonce server (ring/run-jetty #'routes {:port 8080 :join? false}))
+(def application (wrap-defaults routes site-defaults))
+
+(defn start [port]
+	ring/run-jetty #'routes {:port port :join? false})
 
 (defn -main []
-	(server))
+	(schema/migrate)
+	(let [port (Integer. (or (System/getenv "PORT") "8080"))]
+		(start port)))
