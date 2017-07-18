@@ -8,10 +8,13 @@
 (defn new-tally-group []
 	)
 
-(defn get-list-of-tally-groups []
+(defn get-tally-groups []
 	)
 
 (defn load-tally-group [group-id]
+	)
+
+(defn rename-tally-group [group-id new-name]
 	)
 
 (defn add-tally [group-id]
