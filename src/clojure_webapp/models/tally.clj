@@ -16,7 +16,8 @@
 		["select * from tally_groups order by groupid desc"])))
 
 (defn load-tally-group [group-id]
-	)
+	(into [] (sql/query spec
+		["select * from tallies where groupid = ?" group-id])))
 
 (defn rename-tally-group [^Integer group-id ^String new-name]
 	(sql/update! spec :tally_groups 
@@ -37,13 +38,13 @@
 	(sql/update! spec :tallies {:tallyname new-name} ["id = ?" tally-id]))
 
 (defn increment-tally [tally-id]
-	)
+	(sql/execute! spec ["update tallies set tallycount = (tallycount + 1) where id = ?" tally-id]))
 
 (defn decrement-tally [tally-id]
-	)
+	(sql/execute! spec ["update tallies set tallycount = (tallycount - 1) where id = ? and tallycount > 0" tally-id]))
 
 (defn reset-tally [tally-id]
 	(sql/update! spec :tallies {:tallycount 0} ["id = ?" tally-id]))
 
 (defn reset-all-in-group [group-id]
-	)
+	(sql/update! spec :tallies {:tallycount 0} ["groupid = ?" group-id]))
