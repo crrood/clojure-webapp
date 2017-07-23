@@ -1,7 +1,7 @@
 (ns clojure-webapp.views.tallies
-	(:require [clojure-webapp.views.layout :as layout]
-		[clojure-webapp.controllers.tallies :as controller]
-		[reagent.core :as r]))
+	(:require 	[clojure-webapp.views.layout :as layout]
+				[clojure-webapp.controllers.tallies :as controller]
+				[reagent.core :as r]))
 
 (defn controls []
 	[:div {:id "controls" :class "control-bar"}

@@ -1,6 +1,6 @@
 (ns clojure-webapp.models.migration
-	(:require [clojure.java.jdbc :as sql]
-		[clojure-webapp.models.tally :as tally]))
+	(:require 	[clojure.java.jdbc :as sql]
+				[clojure-webapp.models.tally :as tally]))
 
 (defn migrated? []
 	(-> (sql/query tally/spec
