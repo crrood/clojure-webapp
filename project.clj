@@ -10,4 +10,12 @@
   				[compojure "1.4.0"]
   				[ring/ring-defaults "0.3.0"]
   				[hiccup "1.0.5"]
-  				[reagent "0.7.0"]])
+  				[reagent "0.7.0"]]
+  :main ^:skip-aot clojure-webapp.web
+  :uberjar-name "clojure-webapp-standalone.jar"
+  :plugins [[lein-ring "0.12.0"]]
+  :ring {:handler clojure-webapp.web/application
+         :init clojure-webapp.models.migration/migrate}
+  :profiles {:dev {:dependencies [[javax.servlet/servlet-api "3.1.0"]
+                                  [ring-mock "0.3.1"]]}
+              :uberjar {:aot :all}})
