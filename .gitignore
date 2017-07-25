@@ -10,3 +10,8 @@ pom.xml.asc
 /.nrepl-port
 /pg
 schema.csv
+figwheel_server.log
+/resources/public/js/cljs
+/resources/public/js/clojure
+/resources/public/js/figwheel
+/resources/public/js/.figwheel-compile-stamp

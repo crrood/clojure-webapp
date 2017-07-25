@@ -5,8 +5,9 @@
 				[compojure.route :as route]
 				[ring.middleware.defaults :refer [wrap-defaults site-defaults]]
 				[clojure-webapp.controllers.tallies :as tallies]
-				[clojure-webapp.view.layout :as layout]
-				[clojure-webapp.models.migration :as schema])
+				[clojure-webapp.views.layout :as layout]
+				[clojure-webapp.models.migration :as schema]
+				[clojure-webapp.models.tally :as tally])
 	(:gen-class))
 
 (defn index []
@@ -17,7 +18,6 @@
 			[:div {:id "content"} "Hello World!"]]))
 
 (defroutes routes
-	tallies/routes
 	(route/resources "/")
 	(route/not-found (layout/four-oh-four)))
 
